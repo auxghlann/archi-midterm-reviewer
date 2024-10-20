@@ -122,6 +122,7 @@ R - type
 
 
 Ex:
+
 ![r-type example](image.png)
 
 ### 2. I-type Instruction
