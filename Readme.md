@@ -49,6 +49,23 @@
  circuits understand only 1’s and 0’s.* 
  - Therefore, a program written in assembly language is translated from **mnemonics to a representation** using only `1`’s and `0`’s called **machine language**.
 
+## MIPS Register Set
+
+| Name | Number | Use |
+|---|---|---|
+| \$0 | 0 | the constant value 0 |
+| \$at | 1 | assembler temporary |
+| \$v0–$v1 | 2–3 | function return value |
+| \$a0–$a3 | 4–7 | function arguments |
+| \$t0–$t7 | 8–15 | temporary variables |
+| \$s0–$s7 | 16–23 | saved variables |
+| \$t8–$t9 | 24–25 | temporary variables |
+| \$k0–$k1 | 26–27 | operating system (OS) temporaries |
+| \$gp | 28 | global pointer |
+| \$sp | 29 | stack pointer |
+| \$fp | 30 | frame pointer |
+| \$ra | 31 | function return address |
+
 ## 2.1 Three (3) Instruction formats
 ### 1. R-type Instruction
 -  The name R-type is short for **register-type**. 
@@ -88,10 +105,10 @@ R - type
 * **Operand Encoding:**
     * **`rs, rt`:** 
       * Source registers.
-      * The values are based on the MIPS table
+      * The values are based on the MIPS register set 
     * **`rd`:** 
       * Destination register.
-      * The values are based on the MIPS table
+      * The values are based on the MIPS register set
 * **Shift Operation**
   * **`shamt`:**
     *  indicates the amount toshift.
@@ -102,5 +119,9 @@ R - type
 |--|--|--|--|--|--|--|
 |`bits` | 6 | 5 | 5 | 5 | 5 | 6 |
 |`values` | 0 | n | n | n | 0 | 32 (add) / 34 (subtract)|
+
+
+Ex:
+![r-type example](image.png)
 
 ### 2. I-type Instruction
