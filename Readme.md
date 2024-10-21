@@ -123,6 +123,46 @@ R - type
 
 Ex:
 
-![r-type example](image.png)
+![alt text](image-2.png)
+
+#### R-type Assembly Code syntax:
+```
+operation, rd, rs, rt
+```
+
+
+![alt text](image-1.png)
+
+> **Note:** *The easiest way to write the machine language in hexadecimal is to first write it in binary, then look at consecutive **groups of four bits** which correspond to hexadecimal digits*
 
 ### 2. I-type Instruction
+
+- The name I-type is short for **immediate-type**
+-  I-type instructions use two (2) *`register operands`* and one *`immediate operand`*.
+-  The 32-bit instruction has four (4) fields: 
+   -  **`op`**, **`rs`**, **`rt`**, and **`imm`**. 
+     > *The first three fields, op, rs, and rt, are like those of R-type instructions.* 
+   - The `imm` field holds the **16-bit** immediate.
+-  The operation is determined solely by the opcode and is determined by the 3 fields (`rs, rt, imm`)
+   -  **`rs`** and **`imm`**: 
+      -  Always used as *source operands*.
+   -  **`rt`**:
+      -  Used as a *destination* for instructions like addi and lw.
+      -  Used as another source for instructions like sw.
+
+![alt text](image-3.png)
+
+#### Assembly Code syntax:
+```
+# addi
+operation, rt, rs, imm
+
+# lw / sw
+operation rt, imm(rs)
+```
+
+Ex:
+![alt text](image-4.png)
+
+Another ex:
+![alt text](image-5.png)
